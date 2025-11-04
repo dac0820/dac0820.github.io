@@ -588,12 +588,33 @@ function initScrollAnimations() {
 
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 }
+(function() {
+    emailjs.init("82OjgID26h1s1XDKt"); // Replace with your EmailJS Public Key
+})();
 
 // Contact form submission
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Thank you for your message! I will get back to you soon.');
-    e.target.reset();
+
+    const name = this.querySelector('input[placeholder="Your Name"]').value;
+    const email = this.querySelector('input[placeholder="Your Email"]').value;
+    const subject = this.querySelector('input[placeholder="Subject"]').value;
+    const message = this.querySelector('textarea').value;
+
+    // Replace with your EmailJS Service ID and Template ID
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message
+    })
+    .then(() => {
+        alert("✅ Message sent successfully!");
+        this.reset();
+    }, (error) => {
+        console.error("Email send failed:", error);
+        alert("❌ Failed to send message. Please try again later.");
+    });
 });
 
 // Smooth scroll for anchor links
