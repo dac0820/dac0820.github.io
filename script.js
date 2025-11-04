@@ -602,7 +602,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const message = this.querySelector('textarea').value;
 
     // Replace with your EmailJS Service ID and Template ID
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    emailjs.send("service_portfolio", "template_portfolio", {
         from_name: name,
         from_email: email,
         subject: subject,
