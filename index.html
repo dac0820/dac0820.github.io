@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Dhruvil Chandariya</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="glass-nav" id="navbar">
+        <div class="nav-container">
+            <div class="logo">Dhruvil - Portfolio </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="gradient-bg"></div>
+        <div class="hero-content">
+            <div class="glass-card hero-card animate-fade-in">
+                <h1 class="glitch" data-text="Hello, I'm">Hello, I'm</h1>
+                <h2 class="name" id="heroName">Your Name</h2>
+                <p class="tagline" id="heroTagline">Full Stack Developer</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-glass btn-primary">View Work</a>
+                    <a href="#contact" class="btn-glass btn-secondary">Get in Touch</a>
+                </div>
+                <div class="social-links" id="socialLinks"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="glass-card profile-card animate-on-scroll">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-image" id="profileImage">
+                            <img src="https://via.placeholder.com/300" alt="Profile" id="profileImg">
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card about-text animate-on-scroll">
+                    <h3 id="aboutTitle">Full Stack Developer</h3>
+                    <p id="aboutDescription">
+                        Passionate developer with expertise in creating beautiful and functional web applications.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h4 id="statProjects">50+</h4>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 id="statExperience">5+</h4>
+                            <p>Years Exp</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 id="statClients">10+</h4>
+                            <p>Programming Languages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid" id="skillsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline" id="experienceTimeline"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="glass-card contact-info animate-on-scroll">
+                    <h3>Contact Information</h3>
+                    <div class="contact-items" id="contactInfo"></div>
+                </div>
+                <div class="glass-card contact-form-card animate-on-scroll">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required class="glass-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required class="glass-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required class="glass-input">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required class="glass-input"></textarea>
+                        </div>
+                        <button type="submit" class="btn-glass btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <span id="footerName"> Dhruvil Chandariya</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-image-section">
+                    <img id="modalImage" src="" alt="Project Image">
+                </div>
+                <div class="modal-info-section">
+                    <h2 id="modalTitle"></h2>
+                    <div class="modal-tags" id="modalTags"></div>
+                    <div class="modal-description">
+                        <h3>Overview</h3>
+                        <p id="modalDescription"></p>
+                    </div>
+                    <div class="modal-features">
+                        <h3>Key Features</h3>
+                        <ul id="modalFeatures"></ul>
+                    </div>
+                    <div class="modal-tech">
+                        <h3>Technologies Used</h3>
+                        <div id="modalTechnologies"></div>
+                    </div>
+                    <div class="modal-links">
+                        <a id="modalGithub" href="#" target="_blank" class="modal-btn">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a id="modalDemo" href="#" target="_blank" class="modal-btn modal-btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
